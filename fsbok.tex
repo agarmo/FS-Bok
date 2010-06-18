@@ -1,4 +1,4 @@
-\documentclass[11pt, a4paper, twosided]{report}
+\documentclass[11pt, a4paper, twosided]{book}
 
 
 \usepackage[latin1, utf8x]{inputenc}
@@ -44,7 +44,15 @@
 {\end{quote}}
 
 
-\renewcommand{\year}[1]{ \begin{center} \textbf{#1} \end{center}}
+\renewcommand{\year}[1]{ \begin{center} \textbf{{#1}} \end{center}}
+
+
+\newenvironment{vedtak}[2] {
+\begin{center} 	\textbf{{#1}} \end{center}
+\noindent \ignorespaces}	
+{{\#2}}
+
+
 
 
 
@@ -66,6 +74,15 @@
 \tableofcontents
 
 \include{historikk}
+
+
+
+\include{lover}
+
+
+
+\include{vedtak}
+
 
 
 
