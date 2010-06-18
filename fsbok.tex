@@ -1,16 +1,65 @@
-\documentclass[11pt, a4paper]{report}
+\documentclass[11pt, a4paper, twosided]{report}
 
 
 \usepackage[latin1, utf8x]{inputenc}
 \usepackage[norsk]{babel}
+\usepackage{graphics}
 
 
 \title{FS Bok}
+\author{Studentersamfundet i Trondhjem}
+
+\usepackage[ pdftex, plainpages = false, pdfpagelabels, 
+	pdfpagelayout = useoutlines,
+	bookmarks,
+	bookmarksopen = true,
+	bookmarksnumbered = true,
+	breaklinks = true,
+	linktocpage,
+	pagebackref,
+	colorlinks = false,  % was true
+	linkcolor = blue,
+	urlcolor  = blue,
+	citecolor = red,
+	anchorcolor = green,
+	hyperindex = true,
+	hyperfigures
+	]{hyperref} 
+
+	\DeclareGraphicsExtensions{.png, .jpg, .jpeg, .pdf, .gif}
+	%GIF doesn't work??
+
+\usepackage[pdftex]{graphicx}
+\pdfcompresslevel=9
+
+% The acknowledgementslong environment puts a large, bold, centered 
+% "Acknowledgements" label at the top of the page. The acknowledgement itself 
+% does not appears in a quote environment so you can get more in.
+
+\newenvironment{forord}
+{\pagestyle{empty}
+\begin{center}
+\vspace*{1.5cm}
+{\Large \bfseries Forord}
+\end{center}
+\vspace{0.5cm}\begin{quote}}
+{\end{quote}}
+
 
 
 \begin{document}
 
+
+
 \maketitle
+
+\begin{forord}
+	\include{forord}
+\end{forord}
+
+\tableofcontents
+
+\include{historikk}
 
 
 
