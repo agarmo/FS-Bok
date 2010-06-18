@@ -6,28 +6,25 @@
 \usepackage{graphics}
 
 
-\title{FS Bok}
-\author{Studentersamfundet i Trondhjem}
+%\usepackage[ pdftex, plainpages = false, pdfpagelabels, 
+%	pdfpagelayout = useoutlines,
+%	bookmarks,
+%	bookmarksopen = true,
+%	bookmarksnumbered = true,
+%	breaklinks = true,
+%	linktocpage,
+%	pagebackref,
+%	colorlinks = false,  % was true
+%	linkcolor = blue,
+%	urlcolor  = blue,
+%	citecolor = red,
+%	anchorcolor = green,
+%	hyperindex = true,
+%	hyperfigures
+%	]{hyperref} 
 
-\usepackage[ pdftex, plainpages = false, pdfpagelabels, 
-	pdfpagelayout = useoutlines,
-	bookmarks,
-	bookmarksopen = true,
-	bookmarksnumbered = true,
-	breaklinks = true,
-	linktocpage,
-	pagebackref,
-	colorlinks = false,  % was true
-	linkcolor = blue,
-	urlcolor  = blue,
-	citecolor = red,
-	anchorcolor = green,
-	hyperindex = true,
-	hyperfigures
-	]{hyperref} 
-
-	\DeclareGraphicsExtensions{.png, .jpg, .jpeg, .pdf, .gif}
-	%GIF doesn't work??
+%\DeclareGraphicsExtensions{.png, .jpg, .jpeg, .pdf, .gif}
+%GIF doesn't work??
 
 \usepackage[pdftex]{graphicx}
 \pdfcompresslevel=9
@@ -42,20 +39,29 @@
 \vspace*{1.5cm}
 {\Large \bfseries Forord}
 \end{center}
-\vspace{0.5cm}\begin{quote}}
+\vspace{0.5cm}
+\begin{quote}}
 {\end{quote}}
+
+
+\renewcommand{\year}[1]{ \begin{center} \textbf{#1} \end{center}}
+
+
+
+\title{FS Bok}
+\author{Studentersamfundet i Trondhjem}
+
 
 
 
 \begin{document}
 
+%\maketitle
 
+\cleardoublepage
 
-\maketitle
+\include{forord}
 
-\begin{forord}
-	\include{forord}
-\end{forord}
 
 \tableofcontents
 
