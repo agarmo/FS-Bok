@@ -59,9 +59,48 @@
  #3
 \end{vedtak-test}
 
-\emph{#2}
+\emph{Forslaget ble fremmet av #2}
 }
 % slutt vedtakskommando
+
+
+% div counters
+
+\newcounter{lovkapittel}
+\setcounter{lovkapittel}{1}
+\newcounter{lovparagrafcounter}
+\setcounter{lovparagrafcounter}{1}
+
+
+% Samfundets lover
+
+\newenvironment{lovkapittel}[1]{
+\begin{center}
+    \begin{Large}
+        \textbf{Kapittel \arabic{lovkapittel}: #1}
+    \end{Large}
+\end{center}}{\addtocounter{lovkapittel}{1}}
+
+\newenvironment{lovparagraf}[1]{
+\begin{center}
+    \textbf{§ \arabic{lovparagrafcounter}}
+
+    \emph{#1}
+\end{center}}
+{\addtocounter{lovparagrafcounter}{1}}
+
+% Slutt lover
+
+
+% Instruks environment
+
+
+
+
+
+% Slutt instruks environment
+
+
 
 \title{FS Bok}
 \author{Studentersamfundet i Trondhjem}
