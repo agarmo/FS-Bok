@@ -68,8 +68,12 @@
 
 \newcounter{lovkapittel}
 \setcounter{lovkapittel}{1}
+
 \newcounter{lovparagrafcounter}
 \setcounter{lovparagrafcounter}{1}
+
+\newcounter{fondsparagrafcounter}
+\setcounter{fondsparagrafcounter}{1}
 
 
 % Samfundets lover
@@ -79,7 +83,7 @@
     \begin{Large}
         \textbf{Kapittel \arabic{lovkapittel}: #1}
     \end{Large}
-\end{center}}{\addtocounter{lovkapittel}{1}}
+\end{center}}{\addtocounter{lovkapittel}{1} \newpage}
 
 \newenvironment{lovparagraf}[1]{
 \begin{center}
@@ -90,6 +94,27 @@
 {\addtocounter{lovparagrafcounter}{1}}
 
 % Slutt lover
+
+% Fondsstatutter
+
+\newenvironment{fond}[1]{
+ \begin{center}
+    \begin{Large}
+        \textbf{#1}
+    \end{Large}
+\end{center}}{\setcounter{fondsparagrafcounter}{1} %reset the counter
+\newpage}
+
+\newenvironment{fondsparagraf}[1]{
+\begin{center}
+    \textbf{§ \arabic{fondsparagrafcounter}}
+
+    \emph{#1}
+\end{center}}
+{\addtocounter{fondsparagrafcounter}{1}}
+
+
+% slutt fondsstatutter environment
 
 
 % Instruks environment
@@ -136,6 +161,7 @@
 
 \part{Statutter}
 
+\include{fonds}
 
 \end{document}
 
