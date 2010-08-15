@@ -47,14 +47,21 @@
 \renewcommand{\year}[1]{ \begin{center} \textbf{{#1}} \end{center}}
 
 
-\newenvironment{vedtak}[2] {
+% Vedtakskommandoen gir riktig vedtakslayout
+\newenvironment{vedtak-test}[1] {%
 \begin{center} 	\textbf{{#1}} \end{center}
-\noindent \ignorespaces}	
-{{\#2}}
+\noindent \ignorespaces	
+}{}
 
+\newcommand{\vedtak}[3]{
+\noindent \ignorespaces
+\begin{vedtak-test}{#1}%
+ #3
+\end{vedtak-test}
 
-
-
+\emph{#2}
+}
+% slutt vedtakskommando
 
 \title{FS Bok}
 \author{Studentersamfundet i Trondhjem}
