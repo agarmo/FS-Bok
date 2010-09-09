@@ -75,6 +75,13 @@
 \newcounter{fondsparagrafcounter}
 \setcounter{fondsparagrafcounter}{1}
 
+\newcounter{instruksledd}
+\setcounter{instruksledd}{1}
+
+\newenvironment{noindentenv}%
+{\noindent \ignorespaces}%
+{\par\noindent%
+\ignorespacesafterend}
 
 % Samfundets lover
 
@@ -119,11 +126,32 @@
 
 % Instruks environment
 
-
-
-
-
+\newenvironment{instruks}[3]{
+    \begin{center}
+        \begin{Large}
+            \textbf{#1}
+        \end{Large}
+    \end{center}
+    \begin{noindentenv}
+        \emph{Sist oppdatert #2}\\
+        \emph{Godkjent av Finansstyret #3}
+    \end{noindentenv}
+    }
+{\setcounter{instruksledd}{1} \newpage}
 % Slutt instruks environment
+
+
+% Instruksledd environment
+
+\newenvironment{instruksledd}[1]{
+\begin{center}
+    \textbf{\arabic{instruksledd}. }
+    \textbf{#1}
+\end{center}}
+{\addtocounter{instruksledd}{1}}
+
+% End instruksledd environment
+
 
 
 
@@ -162,6 +190,9 @@
 \part{Statutter}
 
 \include{fonds}
+
+
+\part{Gjenginstrukser}
 
 
 \include{instrukser}
