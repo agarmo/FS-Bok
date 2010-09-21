@@ -4,7 +4,8 @@
 \usepackage[latin1, utf8x]{inputenc}
 \usepackage[norsk]{babel}
 \usepackage{graphics}
-
+\usepackage{fullpage}
+\usepackage{fancyhdr}
 
 %\usepackage[ pdftex, plainpages = false, pdfpagelabels, 
 %	pdfpagelayout = useoutlines,
@@ -154,11 +155,10 @@
 
 
 
-
 \title{FS Bok}
 \author{Studentersamfundet i Trondhjem}
 
-
+\pagestyle{fancy}
 
 
 \begin{document}
@@ -183,7 +183,7 @@
 
 %reset counters
 \setcounter{lovkapittel}{1}
-\setcounter{lovparagrafcounter}{1}'
+\setcounter{lovparagrafcounter}{1}
 
 
 \part{Vedvarende vedtak ved Studentersamfundet i Trondhjem}
@@ -194,13 +194,16 @@
 
 \include{fonds}
 
+\part{Generelle Instrukser}
+
+
+
+\include{instrukser/generell}
 
 \part{Gjenginstrukser}
 
 
 %\include{instrukser}
-
-\include{instrukser/generell}
 
 \include{instrukser/arkivet}
 
