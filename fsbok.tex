@@ -7,7 +7,7 @@
 
 \usepackage{ucs}
 \usepackage[utf8x]{inputenc}
-\usepackage[T1]{fontenc}
+%\usepackage[T1]{fontenc}
 
 %\usepackage[ pdftex, plainpages = false, pdfpagelabels, 
 %	pdfpagelayout = useoutlines,
@@ -130,6 +130,7 @@
 % Instruks environment
 
 \newenvironment{instruks}[3]{
+\addcontentsline{toc}{chapter}{#1}
     \begin{center}
         \begin{Large}
             \textbf{#1}
