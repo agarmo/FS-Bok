@@ -91,6 +91,7 @@
 % Samfundets lover
 
 \newenvironment{lovkapittel}[1]{
+\addcontentsline{toc}{section}{#1}
 \begin{center}
     \begin{Large}
         \textbf{Kapittel \arabic{lovkapittel}: #1}
@@ -110,7 +111,8 @@
 % Fondsstatutter
 
 \newenvironment{fond}[1]{
- \begin{center}
+\addcontentsline{toc}{section}{#1}
+\begin{center}
     \begin{Large}
         \textbf{#1}
     \end{Large}
@@ -182,7 +184,7 @@
 \include{historikk}
 
 
-\part{Samfundets Lover}
+\part{Samfundets Lover og Statutter}
 
 \include{lover}
 
@@ -254,7 +256,6 @@
 
 \include{instrukser/vk}
 
-\addcontentsline{toc}{chapter}{Instrukser for Finansstyrets undergrupper}
 
 \include{instrukser/gsk}
 
