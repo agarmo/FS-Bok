@@ -52,6 +52,21 @@
 
 \renewcommand{\year}[1]{ \begin{center} \textbf{{#1}} \end{center}}
 
+\renewcommand{\part}[1]{
+    \cleardoublepage
+    \addcontentsline{toc}{part}{#1}
+    \vspace{10cm}
+    \begin{center}
+        {\Huge\textbf{ #1}}
+        \vfill
+        \includegraphics[width=0.5\textwidth]{anniversary2010-logo}
+    \end{center}
+
+
+    \newpage
+}
+
+
 %Kommentar fra KRistian
 
 % Vedtakskommandoen gir riktig vedtakslayout
@@ -219,7 +234,7 @@
 
 %\part{Gjenginstrukser}
 
-\chapter*{Gjeng Instrukser}
+\chapter*{Gjenginstrukser}
 
 \include{instrukser/dg}
 
