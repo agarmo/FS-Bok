@@ -41,16 +41,27 @@
 
 \newenvironment{forord}
 {\pagestyle{empty}
-\begin{center}
-\vspace*{1.5cm}
-{\Large \bfseries Forord}
-\end{center}
-\vspace{0.5cm}
+    \begin{center}
+        \vspace*{1.5cm}
+        {\Large \bfseries Forord}
+    \end{center}
+    \vspace{0.5cm}
 \begin{quote}}
 {\end{quote}}
 
 
-\renewcommand{\year}[1]{ \begin{center} \textbf{{#1}} \end{center}}
+\newenvironment{year-env}[1]{%
+\begin{center}
+    \textbf{{#1}}
+\end{center}% 
+\nopagebreak%
+\begin{itemize}}
+{\end{itemize}\par}
+
+
+\renewcommand{\year}[1]{\begin{year-env}{#1}}
+
+\newcommand{\yearend}{\end{year-env}}
 
 \renewcommand{\part}[1]{
     \cleardoublepage
@@ -79,7 +90,7 @@
 }{}
 
 \newcommand{\vedtak}[3]{
-\noindent \ignorespaces
+\noindent \ignorespaces \nopagebreak
 \begin{vedtak-test}{#1}%
  #3
 \end{vedtak-test}
@@ -110,7 +121,7 @@
 
 % Samfundets lover
 
-\newenvironment{lovkapittel}[1]{
+\newenvironment{lovkapittel}[1]{%
 \addcontentsline{toc}{section}{#1}
 \begin{center}
     \begin{Large}
@@ -118,19 +129,19 @@
     \end{Large}
 \end{center}}{\addtocounter{lovkapittel}{1} \newpage}
 
-\newenvironment{lovparagraf}[1]{
+\newenvironment{lovparagraf}[1]{%\
+\ignorespaces
 \begin{center}
     \textbf{§ \arabic{lovparagrafcounter}}
-
     \textbf{#1}
-\end{center}}
+\end{center} \nopagebreak}
 {\addtocounter{lovparagrafcounter}{1}}
 
 % Slutt lover
 
 % Fondsstatutter
 
-\newenvironment{fond}[1]{
+\newenvironment{fond}[1]{%
 \addcontentsline{toc}{section}{#1}
 \begin{center}
     \begin{Large}
@@ -139,12 +150,12 @@
 \end{center}}{\setcounter{fondsparagrafcounter}{1} %reset the counter
 \newpage}
 
-\newenvironment{fondsparagraf}[1]{
+\newenvironment{fondsparagraf}[1]{%
 \begin{center}
     \textbf{§ \arabic{fondsparagrafcounter}}
-
     \emph{#1}
-\end{center}}
+    \nopagebreak
+\end{center} \nopagebreak}
 {\addtocounter{fondsparagrafcounter}{1}}
 
 
@@ -164,7 +175,7 @@
         \emph{Sist oppdatert #2}\\
         \emph{Godkjent av Finansstyret #3}
     \end{noindentenv}
-    }
+    \nopagebreak}
 {\setcounter{instruksledd}{1} \newpage}
 % Slutt instruks environment
 
@@ -175,7 +186,8 @@
 \begin{center}
     \textbf{\arabic{instruksledd}. }
     \textbf{#1}
-\end{center}}
+    \nopagebreak
+\end{center} \nopagebreak }
 {\addtocounter{instruksledd}{1}}
 
 % End instruksledd environment
@@ -202,7 +214,6 @@
 \part{Historikk}
 
 \include{historikk}
-
 
 \part{Studentersamfundet i Trondhjems Lover og Statutter}
 
