@@ -179,6 +179,23 @@
 {\setcounter{instruksledd}{1} \newpage}
 % Slutt instruks environment
 
+% Instruks environment
+
+\newenvironment{instruks*}[1]{
+\addcontentsline{toc}{section}{#1}
+    \begin{center}
+        \begin{Large}
+            \textbf{#1}
+        \end{Large}
+    \end{center}
+    \begin{noindentenv}
+
+    \end{noindentenv}
+    \nopagebreak}
+{\setcounter{instruksledd}{1} \newpage}
+% Slutt instruks environment
+
+
 
 % Instruksledd environment
 
