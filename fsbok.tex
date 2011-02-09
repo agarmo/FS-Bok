@@ -219,6 +219,15 @@
 
 \begin{document}
 
+\pagestyle{empty}
+%ugly ugly UGLY UGLY UGLY bugly!!
+\begin{figure}[p!tb]
+    \begin{center}
+        \includegraphics[width=\textwidth]{FSBok2010-forside.png}
+    \end{center}
+\end{figure}
+
+
 %\maketitle
 
 \cleardoublepage
@@ -226,11 +235,18 @@
 \include{forord}
 
 
+\pagestyle{plain}
+
 \tableofcontents
 
 \part{Historikk}
 
 \include{historikk}
+
+
+\chapter*{Organisasjonskart}
+\includegraphics[width=\textwidth]{Organisasjonskart.jpg}
+
 
 \part{Studentersamfundet i Trondhjems Lover og Statutter}
 
